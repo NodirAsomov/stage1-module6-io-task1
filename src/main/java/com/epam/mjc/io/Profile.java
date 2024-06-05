@@ -1,5 +1,6 @@
 package com.epam.mjc.io;
 
+import java.io.File;
 import java.util.Objects;
 
 public class Profile {
@@ -9,6 +10,9 @@ public class Profile {
     private String email;
     private Long phone;
 
+
+
+
     public Profile() {
 
     }
@@ -17,7 +21,9 @@ public class Profile {
         this.age = age;
         this.email = email;
         this.phone = phone;
+
     }
+
 
     public String getName() {
         return name;
