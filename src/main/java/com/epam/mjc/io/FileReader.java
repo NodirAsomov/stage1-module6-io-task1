@@ -9,13 +9,9 @@ import java.util.Map;
 public class FileReader {
 
 
-
-
-
-
     public Profile getDataFromFile(File file) {
 
-        Map<String,String>hashmap=new HashMap<String, String>();
+        Map<String, String> hashmap = new HashMap<String, String>();
 
         FileInputStream fis = null;
         String str = "";
@@ -66,17 +62,6 @@ public class FileReader {
              }*/
 
 
-
-
-
-
-
-
-
-
-
-
-
         } catch (IOException e) {
             e.printStackTrace();
         } finally {
@@ -94,18 +79,11 @@ public class FileReader {
 
     public static void main(String[] args) {
 
-       File file=new File("C:\\Users\\user\\stage1-module6-io-task1\\target\\classes\\Profile.txt");
+        File file = new File("C:\\Users\\user\\stage1-module6-io-task1\\target\\classes\\Profile.txt");
 
 
-
-        FileReader fileReader=new FileReader();
+        FileReader fileReader = new FileReader();
         fileReader.getDataFromFile(file);
-
-
-
-
-
-
 
 
     }
