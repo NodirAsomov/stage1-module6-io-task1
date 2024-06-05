@@ -1,7 +1,7 @@
 package com.epam.mjc.io;
 
 import java.io.*;
-import java.util.Arrays;
+
 import java.util.HashMap;
 import java.util.Map;
 
@@ -9,11 +9,9 @@ import java.util.Map;
 public class FileReader {
 
 
-    Profile profile;
 
-    public void setProfile(Profile profile) {
-        this.profile =profile;
-    }
+
+
 
     public Profile getDataFromFile(File file) {
 
@@ -32,7 +30,16 @@ public class FileReader {
 
             System.out.println("After reading file");
             System.out.println(str);
-            String[] array=str.split("\r\n");
+
+            String[] keyVals = str.split("[:\\n]");
+
+            return new Profile(keyVals[1].trim(),
+                    Integer.parseInt(keyVals[3].trim()),
+                    keyVals[5].trim(),
+                    Long.parseLong(keyVals[7].trim()));
+
+
+            /*String[] array=str.split("\r\n");
             System.out.println(array.length);
 
 
@@ -47,6 +54,7 @@ public class FileReader {
                 if (key.length==2){
                     hashmap.put(key[0],key[1]);
 
+
                 }
 
                 else {
@@ -54,7 +62,9 @@ public class FileReader {
                 }
 
 
-             }
+
+             }*/
+
 
 
 
@@ -90,7 +100,7 @@ public class FileReader {
 
         FileReader fileReader=new FileReader();
         fileReader.getDataFromFile(file);
-        fileReader.setProfile(fileReader.getDataFromFile(file));
+
 
 
 
